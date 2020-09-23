@@ -58,8 +58,31 @@ def create_new_listing():
     new_listing = driver.find_element_by_xpath("//span[contains(text(),'Create New Listing')]")
     new_listing.click()
     time.sleep(2)
+    print("Click on the 'Create New Listing' button.")
+
 
 def item_for_sale():
     for_sale_button = driver.find_element_by_xpath("//span[contains(text(),'Item for Sale')]")
     for_sale_button.click()
     time.sleep(2)
+    print("Choosing the 'Item for Sale' option.")
+
+
+def upload_photos(photo_file_path):
+    image_update = driver.find_element_by_xpath("//input[@class='mkhogb32' and contains(@accept, 'image')]")
+    image_update.send_keys(photo_file_path)
+    time.sleep(3)
+    print("Photo file is uploaded.")
+
+
+def title_box(title):
+    title_line = driver.find_element_by_xpath("//label[@aria-label='Title']//input[contains(@id, 'jsc_c_')]")
+    title_line.send_keys(title)
+    print(f"Entered {title} to the title box")
+
+
+def price_box(price):
+    price_line = driver.find_element_by_xpath("//label[@aria-label='Price']//input[contains(@id, 'jsc_c_')]")
+    price_line.send_keys(price)
+    print(f"Entered {price} to the price box")
+
