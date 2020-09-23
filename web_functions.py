@@ -52,3 +52,14 @@ def sign_in(username, password):
     sign_in_button.click()
     print("Clicked on the sign in button")
     time.sleep(2)
+
+
+def create_new_listing():
+    new_listing = driver.find_element_by_xpath("//span[contains(text(),'Create New Listing')]")
+    new_listing.click()
+    time.sleep(2)
+
+def item_for_sale():
+    for_sale_button = driver.find_element_by_xpath("//span[contains(text(),'Item for Sale')]")
+    for_sale_button.click()
+    time.sleep(2)
