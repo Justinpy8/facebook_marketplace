@@ -1,3 +1,4 @@
+import none as none
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
@@ -86,3 +87,57 @@ def price_box(price):
     price_line.send_keys(price)
     print(f"Entered {price} to the price box")
 
+
+def category_list():
+    category = driver.find_element_by_xpath("//input[@aria-label='Category']")
+    category.click()
+    time.sleep(1)
+    print("Bringing up the the main category dropdown menu")
+
+
+def maincat_electronics():
+    electronics = driver.find_element_by_xpath(
+        "//*[contains(@id,'jsc_c_')]/div/div/div/div/div/span/div/div[9]/div/div[1]/div/div[1]/div/div/div/span/span")
+    electronics.click()
+    time.sleep(1)
+    print("Selected 'Electronics' from the category list")
+
+
+def subcat1_computer():
+    computers = driver.find_element_by_link_text("//span[contains(text(),'Computers, Laptops & Tablets')]")
+    computers.click()
+    time.sleep(1)
+    print("Selected 'Computers, Laptops & Tablets' from the subcategory list.")
+
+
+def subcat2_accessories():
+    accessories = driver.find_element_by_xpath(
+        "//*[contains(@id,'jsc_c_')]/div/div/div/div/div/span/div/div[4]/div/div[1]/div/div[1]/div/div/div/span/span")
+    accessories.click()
+    time.sleep(1)
+    print("Selected 'Computer Peripherals & Accessories' from the subcategory list")
+
+
+def subcat3_mice():
+    mice = driver.find_element_by_xpath(
+        "//*[contains(@id,'jsc_c_')]/div/div/div/div/div/span/div/div[5]/div/div[1]/div/div[1]/div/div/div[1]/span/span]")
+    mice.click()
+    time.sleep(1)
+    print("Selected 'Mice, Trackballs & Touchpads' from the subcategory list")
+
+
+def condition_list(condition):
+    if condition == "Fair":
+        used_fair = driver.find_element_by_xpath("//span[contains(text(),'Used - Fair')]")
+        used_fair.click()
+        print("Condition:Used - Fair")
+    elif condition == "Good":
+        used_good = driver.find_element_by_xpath("//span[contains(text(),'Used - Good')]")
+        used_good.click()
+        print("Condition:Used - Good")
+    elif condition == "Like New":
+        used_like_new = driver.find_element_by_xpath("//span[contains(text(),'Used - Good')]")
+        used_like_new.click()
+        print("Condition:Used - Like New")
+    # elif condition == "New":
+    #     new = driver.find_element_by_xpath("")
