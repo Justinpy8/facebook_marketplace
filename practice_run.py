@@ -6,7 +6,10 @@ password = data['password']
 photo_file_path = "C:/Dev/facebook_marketplace/data/Mouse.jpg"
 title = 'Broken old computer mouse'
 price = '100'
-condition = 'Fair'
+condition = 'New'
+zipcode = "10032"
+
+
 
 
 launching_website(url)
@@ -21,3 +24,6 @@ maincat_electronics()
 subcat1_computer()
 subcat2_accessories()
 subcat3_mice()
+condition_list(condition)
+next_button()
+location_box(zipcode)

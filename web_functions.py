@@ -99,12 +99,13 @@ def maincat_electronics():
     electronics = driver.find_element_by_xpath(
         "//*[contains(@id,'jsc_c_')]/div/div/div/div/div/span/div/div[9]/div/div[1]/div/div[1]/div/div/div/span/span")
     electronics.click()
-    time.sleep(1)
+    time.sleep(2)
     print("Selected 'Electronics' from the category list")
 
 
 def subcat1_computer():
-    computers = driver.find_element_by_link_text("//span[contains(text(),'Computers, Laptops & Tablets')]")
+    computers = driver.find_element_by_xpath(
+        "//*[contains(@id,'jsc_c_')]/div/div/div/div/div/span/div/div[6]/div/div[1]/div/div[1]/div/div/div/span/span")
     computers.click()
     time.sleep(1)
     print("Selected 'Computers, Laptops & Tablets' from the subcategory list.")
@@ -120,13 +121,16 @@ def subcat2_accessories():
 
 def subcat3_mice():
     mice = driver.find_element_by_xpath(
-        "//*[contains(@id,'jsc_c_')]/div/div/div/div/div/span/div/div[5]/div/div[1]/div/div[1]/div/div/div[1]/span/span]")
+        "//*[contains(@id,'jsc_c_')]/div/div/div/div/div/span/div/div[5]/div/div[1]/div/div[2]/div/div/i")
     mice.click()
     time.sleep(1)
     print("Selected 'Mice, Trackballs & Touchpads' from the subcategory list")
 
 
 def condition_list(condition):
+    condition_button = driver.find_element_by_xpath("//label[@aria-label='Condition']//*[contains(@id,'jsc_c_')]/div")
+    condition_button.click()
+
     if condition == "Fair":
         used_fair = driver.find_element_by_xpath("//span[contains(text(),'Used - Fair')]")
         used_fair.click()
@@ -136,8 +140,28 @@ def condition_list(condition):
         used_good.click()
         print("Condition:Used - Good")
     elif condition == "Like New":
-        used_like_new = driver.find_element_by_xpath("//span[contains(text(),'Used - Good')]")
+        used_like_new = driver.find_element_by_xpath("//span[contains(text(),'Used - Like New')]")
         used_like_new.click()
         print("Condition:Used - Like New")
-    # elif condition == "New":
-    #     new = driver.find_element_by_xpath("")
+    elif condition == "New":
+        new = driver.find_element_by_xpath(
+            "//div[@class='rq0escxv l9j0dhe7 du4w35lb']//div[@class='rq0escxv l9j0dhe7 du4w35lb']//div[@class='j34wkznp qp9yad78 pmk7jnqg kr520xx4']//div[@class='tojvnm2t a6sixzi8 k5wvi7nf q3lfd5jv pk4s997a bipmatt0 cebpdrjk qowsmv63 owwhemhu dp1hu0rb dhp61c6y l9j0dhe7 iyyx5f41 a8s20v7p']//div[1]//div[1]//div[1]//div[1]//span[1]")
+        new.click()
+        print("Condition: New")
+
+
+def next_button():
+    driver.find_element_by_link_text(
+        "//span[@class='a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7 ltmttdrg g0qnabr5 ojkyduve']").click()
+    print("Click on the next button")
+
+
+def location_box(zipcode):
+    postal_code = driver.find_element_by_xpath("//input[@aria-label='Enter a city']")
+    postal_code.send_keys(zipcode)
+
+
+def publish_button():
+    publish = driver.find_element_by_xpath(
+        "//span[@class='a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7 ltmttdrg g0qnabr5 ojkyduve']")
+    publish.click()
