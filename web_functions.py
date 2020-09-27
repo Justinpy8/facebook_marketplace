@@ -45,24 +45,28 @@ def sign_in(username, password):
     pw = driver.find_element_by_xpath("//input[@placeholder='Password']")
     pw.clear()
     pw.send_keys(password)
+    time.sleep(1)
+    pw.send_keys(Keys.RETURN)
     print("Password is entered")
 
-    """Clicking on the sing in button"""
+    """Clicking on the sign in button"""
     sign_in_button = driver.find_element_by_xpath(
-        "//span[@class='d2edcug0 hpfvmrgz qv66sw1b c1et5uql rrkovp55 a8c37x1j keod5gw0 nxhoafnm aigsh9s9 d3f4x2em fe6kdd0r mau55g9w c8b282yb iv3no6db jq4qci2q a3bd9o3v lrazzd5p bwm1u5wc']")
+        "//*[@id='login_form']//span[@class='a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7 ltmttdrg g0qnabr5']")
     sign_in_button.click()
     print("Clicked on the sign in button")
     time.sleep(2)
 
 
 def create_new_listing():
-    new_listing = driver.find_element_by_xpath("//span[contains(text(),'Create New Listing')]")
+    """Select the 'Create New Listing' button"""
+    new_listing = driver.find_element_by_xpath("//a[@aria-label='Create New Listing']//span[contains(text(),'Create New Listing')]")
     new_listing.click()
     time.sleep(2)
     print("Click on the 'Create New Listing' button.")
 
 
 def item_for_sale():
+    """Select the 'Item For Sale' option"""
     for_sale_button = driver.find_element_by_xpath("//span[contains(text(),'Item for Sale')]")
     for_sale_button.click()
     time.sleep(2)
@@ -70,6 +74,7 @@ def item_for_sale():
 
 
 def upload_photos(photo_file_path):
+    """Upload photo file"""
     image_update = driver.find_element_by_xpath("//input[@class='mkhogb32' and contains(@accept, 'image')]")
     image_update.send_keys(photo_file_path)
     time.sleep(3)
@@ -89,6 +94,7 @@ def price_box(price):
 
 
 def category_list():
+    """Performs the click function to bring up the category dropdown list"""
     category = driver.find_element_by_xpath("//input[@aria-label='Category']")
     category.click()
     time.sleep(1)
@@ -96,6 +102,7 @@ def category_list():
 
 
 def maincat_electronics():
+    """'maincat' is the first layer on the category list."""
     electronics = driver.find_element_by_xpath(
         "//*[contains(@id,'jsc_c_')]/div/div/div/div/div/span/div/div[9]/div/div[1]/div/div[1]/div/div/div/span/span")
     electronics.click()
@@ -104,6 +111,7 @@ def maincat_electronics():
 
 
 def subcat1_computer():
+    """subcat1 is the first layer on the subcategory list"""
     computers = driver.find_element_by_xpath(
         "//*[contains(@id,'jsc_c_')]/div/div/div/div/div/span/div/div[6]/div/div[1]/div/div[1]/div/div/div/span/span")
     computers.click()
@@ -112,6 +120,7 @@ def subcat1_computer():
 
 
 def subcat2_accessories():
+    """subcat2 is the second layer on the subcategory list"""
     accessories = driver.find_element_by_xpath(
         "//*[contains(@id,'jsc_c_')]/div/div/div/div/div/span/div/div[4]/div/div[1]/div/div[1]/div/div/div/span/span")
     accessories.click()
@@ -120,6 +129,7 @@ def subcat2_accessories():
 
 
 def subcat3_mice():
+    """subcat3 is the third layer on the subcategory list"""
     mice = driver.find_element_by_xpath(
         "//*[contains(@id,'jsc_c_')]/div/div/div/div/div/span/div/div[5]/div/div[1]/div/div[2]/div/div/i")
     mice.click()
@@ -157,11 +167,17 @@ def next_button():
 
 
 def location_box(zipcode):
+    """Finding location by zipcode"""
     postal_code = driver.find_element_by_xpath("//input[@aria-label='Enter a city']")
     postal_code.send_keys(zipcode)
 
+    """Choose the first result by zipcode"""
+    action = ActionChains(driver)
+    action.send_keys(Keys.ARROW_DOWN).send_keys(Keys.RETURN).perform()
+
 
 def publish_button():
+    """Click on the publish button to submit the listing"""
     publish = driver.find_element_by_xpath(
         "//span[@class='a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7 ltmttdrg g0qnabr5 ojkyduve']")
     publish.click()

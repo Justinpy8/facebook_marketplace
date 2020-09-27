@@ -9,9 +9,6 @@ price = '100'
 condition = 'New'
 zipcode = "10032"
 
-
-
-
 launching_website(url)
 sign_in(username, password)
 create_new_listing()
