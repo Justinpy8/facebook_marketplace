@@ -1,5 +1,6 @@
 import none as none
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 from selenium.webdriver import ActionChains
@@ -49,13 +50,6 @@ def sign_in(username, password):
     time.sleep(1)
     pw.send_keys(Keys.RETURN)
     print("Password is entered")
-
-    # """Clicking on the sign in button"""
-    # sign_in_button = driver.find_element_by_xpath(
-    #     "//*[@id='login_form']//span[@class='a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7 ltmttdrg g0qnabr5']")
-    # sign_in_button.click()
-    # print("Clicked on the sign in button")
-    # time.sleep(2)
 
 
 def create_new_listing():
@@ -218,18 +212,22 @@ def remove_listing():
     delete_confirm_button = driver.find_element_by_xpath(
         "//*[@id='mount_0_0']/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[2]/div/div[1]/div[1]/div[1]/div/span/span")
     delete_confirm_button.click()
-    ignore_survey = driver.find_element_by_xpath(
-        "//div[@aria-label='Close']//div[@class='s45kfl79 emlxlaya bkmhp75w spb7xbtv i09qtzwb n7fi1qx3 b5wmifdl hzruof5a pmk7jnqg j9ispegn kr520xx4 c5ndavph art1omkt ot9fgl3s rnr61an3']")
-    ignore_survey.click()
+    time.sleep(2)
+    driver.refresh()
+    time.sleep(3)
     print("Listing has been removed!")
 
 
 def removal_verification_title(title):
-    active_item1_xpath = f"//div[@class='tvmbv18p']//span[contains(text(),'{title}')]"
-    active_item1 = driver.find_element_by_xpath(active_item1_xpath)
-    time.sleep(5)
-    assert not active_item1.is_displayed()
-    print("Listing removal is verified!!")
+    try:
+        active_item1_xpath = f"//div[@class='tvmbv18p']//span[contains(text(),'{title}')]"
+        active_item1 = driver.find_element_by_xpath(active_item1_xpath)
+        assert not active_item1.is_displayed(), 'Listing removal failed, listing web element is still being found!'
+        time.sleep(5)
+    except NoSuchElementException as err:
+        print("Listing removal was a success!")
+        print("Listing item xpath no longer being found with the following error message:")
+        print(err)
 
 
 def close_browser():
