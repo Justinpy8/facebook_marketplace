@@ -18,7 +18,7 @@ zipcode = "11205"
 
 @pytest.mark.listing_creation
 @pytest.mark.listing_creation_positive
-def listing_creation_case1(driver):
+def test_listing_creation_case1(driver):
     logs.info("Starting listing creation positive case test #1!")
     listing = ListingCreationPage(driver)
     listing.launching_website(url)
