@@ -4,6 +4,8 @@ from src.utilities import *
 data = utils.load_yaml("C:/Dev/facebook_marketplace/data/credentials.yml")
 logs = utils.create_logger()
 
+# Parameters:
+
 url = data['url']
 username = data['username']
 password = data['password']
