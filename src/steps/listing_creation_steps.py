@@ -1,12 +1,4 @@
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.select import Select
-from selenium.webdriver import ActionChains
-from selenium.webdriver import ChromeOptions
-import time
-import yaml
-from os.path import dirname, abspath
+from src.all_imports import *
 
 chrome_options = webdriver.ChromeOptions()
 prefs = {"profile.default_content_setting_values.notifications": 2}

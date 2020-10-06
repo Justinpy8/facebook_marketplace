@@ -18,7 +18,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import WebDriverException, NoSuchElementException
 
 # page imports
-
+from src.pages.listing_page import *
+from src.pages.base_page import *
 
 # steps imports
 # from src.steps.login_steps import *
