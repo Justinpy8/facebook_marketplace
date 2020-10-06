@@ -1,2 +1,3 @@
 .idea/
 data/credentials.yml
+__pycache__/

@@ -14,7 +14,6 @@ prefs = {"profile.default_content_setting_values.notifications": 2}
 chrome_options.add_experimental_option("prefs", prefs)
 
 driver = webdriver.Chrome(options=chrome_options)
-
 driver.implicitly_wait(20)
 driver.maximize_window()
 
