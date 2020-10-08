@@ -18,7 +18,7 @@ def get_str_seconds():
 
 
 def create_logger(filename=""):
-    logging.basicConfig(filename=f"C:/Dev/automationpractice_homework/logs/{filename}{get_str_day()}.log",
+    logging.basicConfig(filename=f"C:/Dev/facebook_marketplace/logs/{filename}{get_str_day()}.log",
                         level=logging.INFO,
                         format="%(asctime)-15s [%(levelname)s] %(funcName)s: %(message)s",
                         filemode='a')  # 'w' - to overwrite in each run, 'a' - append

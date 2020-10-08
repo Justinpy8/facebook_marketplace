@@ -20,7 +20,7 @@ class BasePage():
         """Define time format for the file name"""
         system_time = datetime.datetime.fromtimestamp(time.time()).strftime('%Y%m%d_%H%M%S')
         """Set the file location for the screenshot files"""
-        file_path = 'C:/Dev/automationpractice_homework/screenshots/'
+        file_path = 'C:/Dev/facebook_marketplace/screenshots/'
         """Create the file name for the screen shot file."""
         file_name = f"{message}_error_{system_time}.png"
         """Create the variable contains the file location and file name formatting"""

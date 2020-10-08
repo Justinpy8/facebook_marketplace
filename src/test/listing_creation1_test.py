@@ -13,7 +13,7 @@ photo_file_name = 'Mouse.jpg'
 title = 'Broken old computer mouse'
 price = '100'
 condition = 'New'
-zipcode = "11205"
+zipcode = "10003"
 
 
 @pytest.mark.listing_creation

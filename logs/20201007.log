@@ -1,0 +1,32 @@
+2020-10-07 22:53:32,733 [INFO] driver: ********** This is the SETUP fixture to run before your scope of your fixture **********
+2020-10-07 22:53:37,849 [INFO] driver: ********** SETUP fixture completed **********
+2020-10-07 22:53:37,849 [INFO] test_listing_creation_case1: Starting listing creation positive case test #1!
+2020-10-07 22:53:39,310 [INFO] launching_website: https://www.facebook.com/marketplace/ is loading
+2020-10-07 22:53:39,700 [INFO] sign_in: Email is being entered as the user name
+2020-10-07 22:53:40,826 [INFO] sign_in: Password is entered
+2020-10-07 22:53:48,787 [INFO] create_new_listing: Click on the 'Create New Listing' button.
+2020-10-07 22:53:50,862 [INFO] item_for_sale: Choosing the 'Item for Sale' option.
+2020-10-07 22:53:53,999 [INFO] upload_photos: Photo file is uploaded.
+2020-10-07 22:53:54,625 [INFO] title_box: Entered Broken old computer mouse to the title box
+2020-10-07 22:53:54,809 [INFO] price_box: Entered 100 to the price box
+2020-10-07 22:53:55,936 [INFO] category_list: Bringing up the the main category dropdown menu
+2020-10-07 22:53:57,985 [INFO] maincat_electronics: Selected 'Electronics' from the category list
+2020-10-07 22:53:59,051 [INFO] subcat1_computer: Selected 'Computers, Laptops & Tablets' from the subcategory list.
+2020-10-07 22:54:00,095 [INFO] subcat2_accessories: Selected 'Computer Peripherals & Accessories' from the subcategory list
+2020-10-07 22:54:01,154 [INFO] subcat3_mice: Selected 'Mice, Trackballs & Touchpads' from the subcategory list
+2020-10-07 22:54:01,465 [INFO] condition_list: Condition: New
+2020-10-07 22:54:01,626 [INFO] next_button: Click on the next button
+2020-10-07 22:54:07,335 [INFO] location_box: Selected location by ZipCode: 10003
+2020-10-07 22:54:17,774 [INFO] publish_button: Listing has been published and a screen shot is being saved
+2020-10-07 22:54:17,778 [INFO] listing_verification_url: The URL matches, listing is successfully executed!!
+2020-10-07 22:54:27,801 [INFO] listing_verification_title: Active listing item title is verified
+2020-10-07 22:54:35,962 [INFO] remove_listing: Listing has been removed!
+2020-10-07 22:54:56,006 [INFO] removal_verification_title: Listing removal was a success!
+2020-10-07 22:54:56,006 [INFO] removal_verification_title: Listing item xpath no longer being found with the following error message:
+2020-10-07 22:54:56,007 [INFO] driver: ******** This is the TEARDOWN steps after each of your scope *************
+2020-10-07 22:54:56,010 [INFO] driver: Current url: https://www.facebook.com/marketplace/you/selling
+2020-10-07 22:54:56,013 [INFO] driver: Current title:  (20+) Facebook
+2020-10-07 22:54:56,014 [INFO] driver: Current win_handle:  CDwindow-EE638FA88B585EAAF439662863803354
+2020-10-07 22:54:56,014 [INFO] driver: Current name: chrome
+2020-10-07 22:54:58,156 [INFO] driver: browser is closed
+2020-10-07 22:54:58,156 [INFO] driver: ********  TEARDOWN completed *************

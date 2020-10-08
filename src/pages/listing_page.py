@@ -150,8 +150,9 @@ class ListingCreationPage(BasePage):
         """Click on the publish button to submit the listing"""
         publish = self.driver.find_element_by_xpath("//div[@aria-label='Publish']//span[contains(text(),'Publish')]")
         publish.click()
-        logs.info("Listing has been published")
-        time.sleep(20)
+        time.sleep(10)
+        self.screen_shots("Listing_Confirmation")
+        logs.info("Listing has been published and a screen shot is being saved")
 
     def listing_verification_url(self):
         """Verifying if the listing is created successfully by checking the URL"""
